@@ -1,0 +1,1 @@
+Panel c and d source arrays are withheld because they contain observed or reconstructable water-level values; panels a and b are included.

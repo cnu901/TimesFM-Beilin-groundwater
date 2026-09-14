@@ -1,0 +1,19 @@
+﻿sensitivity,setting,confirmed_segments,residual_segments,observed_hits,n_events,null_mean,p_value
+minimum_duration_days,3 d,61,26,7,11,3.206,0.01898101898101898
+minimum_duration_days,4 d,40,15,6,11,1.726,0.001998001998001998
+minimum_duration_days,5 d,28,10,6,11,1.509,0.000999000999000999
+warning_percentile,88th,48,22,7,11,2.574,0.001998001998001998
+warning_percentile,90th,40,15,6,11,1.726,0.001998001998001998
+warning_percentile,92th,35,13,6,11,1.706,0.001998001998001998
+cause_thresholds,rain 24 mm / pressure 9.6 hPa,40,12,4,11,1.245,0.03396603396603397
+cause_thresholds,rain 24 mm / pressure 12.0 hPa,40,15,6,11,1.619,0.002997002997002997
+cause_thresholds,rain 24 mm / pressure 14.4 hPa,40,18,6,11,1.996,0.007992007992007992
+cause_thresholds,rain 30 mm / pressure 9.6 hPa,40,14,4,11,1.572,0.06593406593406594
+cause_thresholds,rain 30 mm / pressure 12.0 hPa,40,17,6,11,1.946,0.004995004995004995
+cause_thresholds,rain 30 mm / pressure 14.4 hPa,40,20,6,11,2.323,0.013986013986013986
+cause_thresholds,rain 36 mm / pressure 9.6 hPa,40,15,6,11,1.728,0.001998001998001998
+cause_thresholds,rain 36 mm / pressure 12.0 hPa,40,19,6,11,1.986,0.004995004995004995
+cause_thresholds,rain 36 mm / pressure 14.4 hPa,40,22,6,11,2.363,0.013986013986013986
+exclude_polarity_interval,2021-04-13 to 2021-06-21,38,14,6,11,1.562,0.001998001998001998
+post_gap_buffer_days,30 d,40,15,6,11,1.726,0.001998001998001998
+post_gap_buffer_days,60 d,40,15,6,11,1.726,0.001998001998001998

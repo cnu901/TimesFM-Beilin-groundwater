@@ -1,0 +1,1 @@
+The daily water-level source array is withheld; anomaly scores, segments, catalogue events, and short-term links are included.

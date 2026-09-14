@@ -1,0 +1,1 @@
+Panel source arrays are withheld because they contain observed water-level values. The rendered figure is retained as a publication output.

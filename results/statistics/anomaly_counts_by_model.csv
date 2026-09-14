@@ -1,0 +1,7 @@
+﻿model,scored_days,confirmed_segments,residual_segments,rainfall_segments,pressure_segments,mixed_segments,borderline_segments
+RidgeOnly,4310,43,19,13,2,0,9
+TimesFMOnly,4310,26,8,3,6,1,8
+FullFramework,4310,40,15,10,3,0,12
+TimesFM_XReg,4310,39,15,9,5,0,10
+SeasonalNaive,4310,23,10,8,3,0,2
+LastValueNaive,4310,28,11,4,4,0,9

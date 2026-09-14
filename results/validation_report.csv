@@ -1,0 +1,12 @@
+﻿quantity,expected,observed,status
+n_daily_records,4748.0,4748,PASS
+n_rolling_windows,622.0,622,PASS
+water_level_missing_2018_hours,469.0,469,PASS
+missing_rainfall_hours,482.0,482,PASS
+longest_rainfall_gap_hours,192.0,192,PASS
+cenc_events,12.0,12,PASS
+full_framework_confirmed_segments,40.0,40,PASS
+full_framework_residual_segments,15.0,15,PASS
+evaluable_events,11.0,11,PASS
+short_term_hits,6.0,6,PASS
+molchan_skill,0.44,0.44,PASS

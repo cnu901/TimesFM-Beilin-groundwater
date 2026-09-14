@@ -1,0 +1,7 @@
+﻿earthquake_time,earthquake_magnitude,earthquake_location,segment_start,segment_end,lead_days,eligible_segments_in_window
+2017-07-23 07:13:34,5.0,Jilin Songyuan,2017-05-26,2017-05-30,58,1
+2017-08-15 11:58:16,4.6,Jilin Songyuan,2017-05-26,2017-05-30,81,1
+2018-05-28 01:50:52,5.7,Jilin Songyuan,2018-04-11,2018-04-17,47,1
+2019-05-18 06:24:48,5.1,Jilin Songyuan,2019-04-17,2019-04-23,31,2
+2019-06-03 01:47:10,4.0,Jilin Songyuan,2019-04-17,2019-04-23,47,2
+2020-02-07 08:12:39,4.1,Heilongjiang Nenjiang,2019-12-28,2020-01-01,41,1

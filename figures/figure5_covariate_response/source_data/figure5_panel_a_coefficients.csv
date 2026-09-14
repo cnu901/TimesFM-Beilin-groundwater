@@ -1,0 +1,14 @@
+﻿feature,coefficient,description
+pressure,0.049391975011431166,Instantaneous barometric loading (hPa)
+pressure_change_72h,-0.015863857532943927,3-day pressure change (hPa)
+pressure_lag_1d,0.0002945630932170137,Pressure lagged by 1 day (hPa)
+pressure_lag_3d,-0.017173298303539686,Pressure lagged by 3 days (hPa)
+rainfall,0.00747701706669299,Contemporaneous rainfall (mm h-1)
+rainfall_3d,-0.0015176912748836077,3-day cumulative rainfall (mm)
+rainfall_7d,0.00875728414637546,7-day cumulative rainfall (mm)
+rainfall_30d,0.08633311040646423,30-day cumulative rainfall (mm)
+trend,-0.34787274864561746,Centred linear trend (dimensionless)
+sin_annual,-0.08974704576994708,Annual sine harmonic
+cos_annual,-0.0426405532259181,Annual cosine harmonic
+sin_semiannual,0.028821488111820445,Semi-annual sine harmonic
+cos_semiannual,-0.002359585211232679,Semi-annual cosine harmonic

@@ -1,0 +1,6 @@
+﻿quantity,n_days,max_abs_difference,n_days_gt_1mm
+water_level_all_days_vs_canonical,4748,0.12527916666666528,51
+water_level_days_without_missing_hours,4649,2.4583333328109802e-05,0
+water_level_days_with_gap_filling,99,0.12527916666666528,51
+air_pressure,4748,8.503401318193937e-06,0
+rainfall,4748,0.0,0

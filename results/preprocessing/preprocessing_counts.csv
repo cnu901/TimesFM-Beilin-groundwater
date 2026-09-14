@@ -1,0 +1,17 @@
+﻿metric,value
+hourly_start,2013-01-01 00:00:00
+hourly_end,2025-12-31 23:00:00
+n_hourly_records,113952
+water_level_missing_raw_hours,1473
+water_level_missing_2018_hours,469
+water_level_filled_short_gap_hours,458
+water_level_filled_long_gap_hours,1015
+pressure_rejected_hours,493
+rainfall_missing_hours,482
+longest_rainfall_gap_hours,192
+step_correction_date,2015-08-26 16:00
+step_correction_offset_m,-0.3536
+polarity_start,2021-04-13 00:00
+polarity_end,2021-06-21 23:00
+polarity_centre_m,31.26405
+n_daily_records,4748

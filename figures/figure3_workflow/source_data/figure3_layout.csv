@@ -1,0 +1,4 @@
+﻿stage,elements
+1,hourly observations; quality control; daily aggregation; 13 covariates
+2,Ridge regression; residual extraction; TimesFM forecast; recombination
+3,weighted score; calibration thresholds; cause classification; association tests

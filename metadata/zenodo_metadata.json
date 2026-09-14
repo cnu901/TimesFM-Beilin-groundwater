@@ -1,0 +1,37 @@
+{
+  "title": "Covariate-Augmented TimesFM for Groundwater-Level Anomaly Detection and Earthquake-Association Analysis",
+  "upload_type": "software",
+  "publication_date": "2026-09-14",
+  "description": "Code and derived results for a retrospective Beilin-well groundwater anomaly screening and earthquake-association study. The release excludes restricted raw monitoring exports and observation-bearing source arrays; see DATA_NOTICE.md.",
+  "creators": [
+    {
+      "name": "Li, Yongsheng"
+    },
+    {
+      "name": "Gao, Feng"
+    },
+    {
+      "name": "Zhou, Chen"
+    },
+    {
+      "name": "Zhang, Simeng"
+    },
+    {
+      "name": "Shi, Wei"
+    },
+    {
+      "name": "Zhou, Weitong"
+    }
+  ],
+  "keywords": [
+    "TimesFM",
+    "groundwater level",
+    "anomaly detection",
+    "earthquake association",
+    "time-series forecasting",
+    "Beilin well"
+  ],
+  "license": "Other (code under MIT; data restrictions described in DATA_NOTICE.md)",
+  "version": "1.1.0",
+  "notes": "Add the article DOI and repository URL after publication or DOI reservation."
+}

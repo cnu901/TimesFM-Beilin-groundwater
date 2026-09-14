@@ -1,0 +1,2 @@
+﻿alarm_window_days,n_residual_segments,n_evaluable_events,operating_tau,operating_nu,molchan_auc,molchan_skill,random_line_auc
+365.0,15.0,11.0,0.803151575787894,0.0,0.2792191550320615,0.4415616899358769,0.5

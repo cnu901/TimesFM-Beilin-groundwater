@@ -1,0 +1,16 @@
+# Pinned environment used to produce the published results.
+numpy==2.2.6
+pandas==3.0.5
+scipy==1.17.1
+scikit-learn==1.9.0
+matplotlib==3.11.1
+torch==2.14.0
+chronos-forecasting==2.3.2
+prophet==1.4.0
+python-docx==1.2.0
+PyYAML==6.0.3
+Pillow==12.3.0
+
+# TimesFM 2.5 is installed from the bundled source tree in third_party/timesfm.
+# The optional native XReg branch additionally requires the JAX extras that
+# ship with that installation.
