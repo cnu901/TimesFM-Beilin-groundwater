@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this code or derived results, please cite the associated article and this repository version."
+title: "Covariate-Augmented TimesFM for Groundwater-Level Anomaly Detection and Earthquake-Association Analysis"
+type: software
+authors:
+  - family-names: Li
+    given-names: Yongsheng
+  - family-names: Gao
+    given-names: Feng
+  - family-names: Zhou
+    given-names: Chen
+  - family-names: Zhang
+    given-names: Simeng
+  - family-names: Shi
+    given-names: Wei
+  - family-names: Zhou
+    given-names: Weitong
+version: 1.1.0
+date-released: "2026-09-14"
+license: MIT
+repository-code: https://github.com/REPLACE_WITH_REPOSITORY/TimesFM
+keywords:
+  - TimesFM
+  - groundwater level
+  - anomaly detection
+  - earthquake association

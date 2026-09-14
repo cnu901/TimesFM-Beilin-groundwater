@@ -1,0 +1,182 @@
+# Reproducible analysis configuration for the Beilin groundwater study.
+# Every parameter that enters the published analysis is declared here so that
+# the full pipeline can be re-run without editing source code.
+
+project:
+  name: Covariate-Augmented TimesFM for Groundwater-Level Anomaly Detection
+  manuscript_id: applsci-4544483
+  well_name: Beilin
+  random_seed: 42
+
+# ---------------------------------------------------------------------------
+# Data sources (relative to the project root)
+# ---------------------------------------------------------------------------
+data:
+  raw_dir: data/raw
+  external_dir: data/external
+  processed_dir: data/processed
+  water_level_hourly: 23035_2_4112_水位_时.TXT
+  pressure_hourly: 23003_1_9130_气压_时.TXT
+  rainfall_hourly: 23003_1_9140_降雨量_时.TXT
+  study_period: ["2013-01-01 00:00", "2025-12-31 23:00"]
+
+# ---------------------------------------------------------------------------
+# Preprocessing
+# ---------------------------------------------------------------------------
+preprocessing:
+  missing_sentinel: 999999.0
+  # Confirmed instrument step, corrected by shifting all earlier values.
+  step_correction:
+    enabled: true
+    # The recorder stepped between 15:00 and 18:00 on 2015-08-26. Values before
+    # the transition are shifted by the measured offset; the manuscript reports
+    # this offset as 0.354 m, the analysis value is 0.3536 m.
+    date: "2015-08-26 16:00"
+    offset_m: -0.3536
+    # The recorder needed two hours to settle after the step. Those two hours
+    # are replaced by the first stable post-step value, as in the original
+    # quality-control pass.
+    transition_window: ["2015-08-26 16:00", "2015-08-26 17:00"]
+    transition_reference: "2015-08-26 18:00"
+  # Polarity inversion: values are mirrored about the mean of the two anchor
+  # hours on 13 April 2021 (last pre-inversion hour, first inverted hour).
+  polarity_correction:
+    enabled: true
+    start: "2021-04-13 00:00"
+    end: "2021-06-21 23:00"
+    anchor_date: "2021-04-13"
+    # Two-anchor mean reconstructed from the published quality-control pass.
+    # Set to null to derive it at run time from the anchor hours instead.
+    centre_m: 31.26405
+  # Instrument-instability interval reported by the observation log. It is
+  # flagged as missing and excluded from scoring and earthquake matching.
+  flagged_gap:
+    start: "2018-06-30 00:00"
+    end: "2018-07-20 23:00"
+  gap_filling:
+    linear_limit_hours: 24
+    long_gap_method: timesfm_bidirectional
+  pressure_quality:
+    valid_min_hpa: 950.0
+    valid_max_hpa: 1050.0
+    zero_is_missing: true
+  rainfall_quality:
+    negative_to_zero: true
+    missing_fill_value: 0.0
+
+# ---------------------------------------------------------------------------
+# Rolling forecasting protocol
+# ---------------------------------------------------------------------------
+window:
+  context_days: 365
+  horizon_days: 30
+  stride_days: 7
+  batch_size: 32
+
+timesfm:
+  model_dir: third_party/models/timesfm-2.5-200m-pytorch
+  source_dir: third_party/timesfm/src
+  configured_context: 512
+  configured_max_horizon: 64
+  quantile_indices: {q10: 1, q20: 2, q80: 8, q90: 9}
+
+models:
+  # Only models with retained scripts and outputs are included in the
+  # reproducible release package.
+  enabled: [RidgeOnly, TimesFMOnly, FullFramework, TimesFM_XReg, SeasonalNaive, LastValueNaive]
+  optional: [Prophet]
+  lstm:
+    hidden_size: 64
+    num_layers: 2
+    epochs: 15
+    learning_rate: 0.001
+    batch_size: 64
+    refit_days: 365
+  prophet:
+    refit_days: 365
+    daily_seasonality: false
+    weekly_seasonality: true
+    yearly_seasonality: true
+  chronos:
+    model_name: amazon/chronos-t5-small
+    num_samples: 20
+
+# ---------------------------------------------------------------------------
+# Anomaly detection
+# ---------------------------------------------------------------------------
+anomaly:
+  # Thresholds are estimated from strictly earlier scores (expanding window),
+  # so a date never contributes to its own alarm threshold.
+  min_calibration_observations: 30
+  warning_percentile: 90
+  critical_percentile: 95
+  min_duration_days: 4
+  gaussian_interval_z: 1.28
+  interval_target_coverage: 0.80
+  cause_classification:
+    rainfall_window_days: 7
+    # 30 mm ~= 90th percentile of the 7-day cumulative rainfall (26.6 mm);
+    # the 10 mm margin leaves a borderline band from 20 mm (about the 75th
+    # percentile of the 11-day cumulative rainfall) up to the hard threshold.
+    rainfall_threshold_mm: 30
+    rainfall_margin_mm: 10
+    pressure_window_days: 7
+    # 11 hPa ~= mean + 2 SD of |7-day mean pressure change| (4.02 + 2*3.23);
+    # the 4 hPa margin leaves a borderline band from 7 hPa (about mean + 1 SD)
+    # up to the hard threshold.
+    pressure_threshold_hpa: 11
+    pressure_margin_hpa: 4
+
+# ---------------------------------------------------------------------------
+# Earthquake catalogue
+# ---------------------------------------------------------------------------
+catalogue:
+  well_latitude: 46.62
+  well_longitude: 126.97
+  minimum_magnitude: 4.0
+  radius_km: 300
+  # Fixed regional radius is a monitoring domain, not a preparation radius.
+  radius_role: regional_monitoring_domain
+  dobrovolsky_relation: "10**(0.43*M)"
+  windows_days:
+    imminent: [0, 30]
+    short_term: [30, 90]
+    medium_term: [90, 365]
+    imminent_short_term: [0, 90]
+    aggregate: [0, 365]
+  exploratory_window: short_term
+  primary_unit: event
+  robustness_unit: sequence
+
+# ---------------------------------------------------------------------------
+# Statistical evaluation
+# ---------------------------------------------------------------------------
+statistics:
+  n_permutations: 1000
+  fdr_alpha: 0.05
+  fdr_family: [imminent, short_term, medium_term, imminent_short_term]
+  sequence_preserving_permutations: 1000
+
+molchan:
+  alarm_window_days: 365
+
+# ---------------------------------------------------------------------------
+# Sensitivity analyses requested by the reviewers
+# ---------------------------------------------------------------------------
+sensitivity:
+  min_duration_days: [3, 4, 5]
+  warning_percentile: [88, 90, 92]
+  rainfall_threshold_mm: [24, 30, 36]
+  pressure_threshold_hpa: [9.6, 12.0, 14.4]
+  radius_km: [150, 200, 250, 300, 350, 400]
+  post_gap_buffer_days: [0, 30, 60]
+  exclude_polarity_interval: ["2021-04-13", "2021-06-21"]
+
+# ---------------------------------------------------------------------------
+# Output layout
+# ---------------------------------------------------------------------------
+output:
+  results_dir: results
+  figures_dir: figures
+  tables_dir: tables
+  logs_dir: logs
