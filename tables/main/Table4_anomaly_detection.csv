@@ -1,0 +1,7 @@
+﻿model,confirmed_segments,residual_segments,borderline_segments,unmatched_residual_segments,earthquake_hits_12,earthquake_hits_11
+RidgeOnly,43,19,9,10,10,10
+TimesFMOnly,26,8,8,4,9,9
+FullFramework,40,15,12,9,11,11
+TimesFM_XReg,39,15,10,10,8,8
+SeasonalNaive,23,10,2,1,7,7
+LastValueNaive,28,11,9,5,9,9

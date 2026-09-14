@@ -1,0 +1,5 @@
+﻿season,months,valid_daily_records,pressure_coefficient
+Spring (Mar-May),"3,4,5",1191,-0.018477796212780437
+Summer (Jun-Aug),"6,7,8",1175,0.17960179128265752
+Autumn (Sep-Nov),"9,10,11",1163,0.003386135025507271
+Winter (Dec-Feb),"12,1,2",1166,0.025911120355719075

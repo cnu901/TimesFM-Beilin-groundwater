@@ -1,0 +1,2 @@
+﻿origin_time,latitude,longitude,magnitude,depth_km,location,region,magnitude_scale,distance_to_well_km,dobrovolsky_radius_km,within_dobrovolsky_radius,hit_365d,hit_short_term
+2018-05-28 01:50:52,45.32,124.68,5.7,10.0,Jilin Songyuan,Songyuan,M,228.49553814357293,282.48799749157075,True,True,True

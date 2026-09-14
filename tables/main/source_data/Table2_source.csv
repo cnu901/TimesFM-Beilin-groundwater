@@ -1,0 +1,13 @@
+﻿origin_time,latitude,longitude,magnitude,depth_km,location,region,magnitude_scale,distance_to_well_km,dobrovolsky_radius_km,within_dobrovolsky_radius,sequence,evaluable,hit_365d,hit_imminent_0_30d,hit_short_term_30_90d
+2013-11-20 02:57:30,46.07,130.53,4.6,8.0,Heilongjiang Huanan,Huanan,M,279.99677842708815,95.0604793656281,False,SEQ1,False,False,False,False
+2017-07-23 07:13:34,45.28,124.77,5.0,10.0,Jilin Songyuan,Songyuan,M,226.1051816347737,141.2537544622754,False,SEQ2,True,True,False,True
+2017-08-15 11:58:16,45.35,124.73,4.6,7.0,Jilin Songyuan,Songyuan,M,223.3573525234839,95.0604793656281,False,SEQ2,True,True,False,True
+2018-01-04 20:21:08,45.28,124.65,4.2,10.0,Jilin Qianguo,Songyuan,M,233.16200887753072,63.97348354826482,False,SEQ2,True,True,False,False
+2018-03-05 06:49:57,45.3,124.72,4.2,10.0,Jilin Qianguo,Songyuan,M,227.56212365568717,63.97348354826482,False,SEQ2,True,True,False,False
+2018-05-28 01:50:52,45.32,124.68,5.7,10.0,Jilin Songyuan,Songyuan,M,228.49553814357293,282.48799749157075,True,SEQ2,True,True,False,True
+2018-09-15 09:13:10,45.27,124.65,4.7,10.0,Jilin Songyuan,Songyuan,M,233.88637168264376,104.9542428652322,False,SEQ2,True,True,False,False
+2018-11-30 15:57:36,45.25,124.7,4.2,9.0,Jilin Songyuan,Songyuan,M,232.41091690524007,63.97348354826482,False,SEQ2,True,True,False,False
+2019-05-18 06:24:48,45.32,124.73,5.1,10.0,Jilin Songyuan,Songyuan,M,225.5167000802376,155.95525028269523,False,SEQ2,True,True,False,True
+2019-06-03 01:47:10,45.3,124.75,4.0,12.0,Jilin Songyuan,Songyuan,M,225.79531203236883,52.48074602497726,False,SEQ2,True,True,False,True
+2020-02-07 08:12:39,48.72,125.23,4.1,7.0,Heilongjiang Nenjiang,Nenjiang,M,267.3804497651653,57.942869642688095,False,SEQ3,True,True,False,True
+2022-03-16 02:44:32,45.25,124.75,4.3,10.0,Jilin Ningjiang,Songyuan,M,229.5052855751076,70.6317554262962,False,SEQ4,True,True,False,False
